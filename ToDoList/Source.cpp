@@ -14,7 +14,7 @@ string password = "";
 using namespace std;
 int main() {
     setlocale(LC_ALL, "ru_RU");
-    std::cout << "Введите пароль от БД";
+    std::cout << "Введите пароль от БД ";
     std::cin >> password;
     sql::Driver* driver;
     sql::Connection* con;

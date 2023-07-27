@@ -19,7 +19,7 @@ void exec_app::menu(sql::Connection* con) {
 
             std::cout << "Введите сумму расхода: ";
             std::cin >> amount;
-            std::cout << "Введите дату (ДД.ММ.ГГГГ): ";
+            std::cout << "Введите дату (ГГГГ.ММ.ДД): ";
             std::cin >> date;
             std::cin.ignore(); // Чтобы очистить буфер от символа новой строки после ввода даты
             std::cout << "Введите описание расхода: ";

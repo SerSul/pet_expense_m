@@ -28,6 +28,7 @@ int main() {
         stmt->execute("SET AUTOCOMMIT=OFF");
         delete stmt;
     }
+
     catch (sql::SQLException e)
     {
         cout << "Could not connect to server. Error message: " << e.what() << endl;

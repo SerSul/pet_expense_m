@@ -53,10 +53,8 @@ void Manager::output_base(sql::Connection* con) {
     }
 }
 
-void Manager::category_output(sql::Connection* con) {
-    std::cout << "По какой категории сделать поиск?";
-    std::string cat;
-    std::cin >> cat;
+void Manager::category_output(sql::Connection* con, string value) {
+    
     try {
         // Подготовка запроса с плейсхолдером
         sql::PreparedStatement* pstmt = con->prepareStatement(
@@ -64,7 +62,7 @@ void Manager::category_output(sql::Connection* con) {
         );
 
         // Установка значения переменной cat в плейсхолдер
-        pstmt->setString(1, cat);
+        pstmt->setString(1, value);
 
         // Выполнение запроса
         sql::ResultSet* res = pstmt->executeQuery();
@@ -81,8 +79,30 @@ void Manager::category_output(sql::Connection* con) {
 
         delete res;
         delete pstmt;
+
     }
     catch (sql::SQLException& e) {
         std::cout << "Ошибка при выполнении запроса SELECT: " << e.what() << std::endl;
     }
+}
+
+void Manager::deletebycategory(sql::Connection* con, string category, string value)
+{
+
+    try {
+        std::string query = "DELETE FROM expend WHERE " + category + " = ?";
+        sql::PreparedStatement* pstmt = con->prepareStatement(query);
+        pstmt->setString(1, value);
+        pstmt->execute(); // Выполняем запрос на удаление записей
+
+        std::cout << "Записи успешно удалены." << std::endl;
+    }
+    catch (sql::SQLException& e) {
+        std::cout << "Ошибка при выполнении запроса DELETE: " << e.what() << std::endl;
+    }
+}
+
+void Manager::date_fillter(sql::Connection* con)
+{
+
 }

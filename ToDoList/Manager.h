@@ -19,7 +19,9 @@ public:
     void addExpenditure(const Expenditure& expenditure, sql::Connection* con);
     void rollback(sql::Connection* con);
     void output_base(sql::Connection* con);
-    void category_output(sql::Connection* con);
+    void category_output(sql::Connection* con, string value);
+    void date_fillter(sql::Connection* con);
+    void deletebycategory(sql::Connection* con, string category, string value);
 };
 
 #endif // MANAGER_H

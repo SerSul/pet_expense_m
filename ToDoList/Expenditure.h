@@ -16,31 +16,23 @@
 using namespace std;
 
 
-enum ExpenseCategory {
-    Food,
-    Entertainment,
-    Transportation,
-    Health,
-    Other
-};
-
 class Expenditure
 {
 private:
     int sum;
     string date, description;
-    ExpenseCategory category;
+    string category;
 
 public:
 
-    Expenditure(int sum, const string& date, const string& description, ExpenseCategory category);
+    Expenditure(int sum, const string& date, const string& description, const string& category);
 
 
 
     int getSum() const;
     string getDate() const;
     string getDescription() const;
-    ExpenseCategory getCategory() const;
+    string getCategory() const;
 
 };
 

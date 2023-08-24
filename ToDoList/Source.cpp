@@ -6,15 +6,15 @@
 
 
 
-const string server = "tcp://127.0.0.1:3306";
-const string username = "root";
+const string server = "";
+const string username = "";
 string password = "";
 
 //use the std namespace
 using namespace std;
 int main() {
     setlocale(LC_ALL, "ru_RU");
-    std::cout << "Ââåäèòå ïàðîëü îò ÁÄ ";
+    std::cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¯Ã Ã°Ã®Ã«Ã¼ Ã®Ã² ÃÃ„ ";
     std::cin >> password;
     sql::Driver* driver;
     sql::Connection* con;
